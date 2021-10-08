@@ -1,0 +1,99 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+
+        <!-- Boostratp 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Siglo XXI</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="/" class="nav__logo">Siglo XXI</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                        <!--li class="nav__item"><a href="registro.html" class="nav__link">Registrarse</a></li-->
+                        <!--li class="nav__item"><a href="login.html" class="nav__link">Ingresar</a></li-->
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+    
+        <!-- Formulario -->
+        <div class="boxForm">
+        <form method="POST" >
+            <fieldset>
+                <legend class="text-center header">¡Ingresa con tu cuenta XXI!</legend>
+            <hr>
+            <br>
+                <!-- <span class="input-group-addon">@</span> -->
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ingresa tu Nombre de Usuario</label>
+              <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de Usuario" required>
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Ingresa tu contraseña</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="contraseña" required>
+            </div>
+            <small id="emailHelp" class="form-text text-muted">Nunca entregaremos tu información a terceros.</small>
+            <!-- <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+            </div> -->
+                
+            
+                
+        
+            <br>
+            <div class="form-group">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            
+                 
+            </div>
+            {% csrf_token %}
+            
+        </fieldset>
+        </form>
+        </div>
+        
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <p class="footer__copy">&#169; 2021 Portafolio Web. Todos los derechos reservados</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{% static 'main/js/main.js' %}"></script>
+    </body>
+</html>

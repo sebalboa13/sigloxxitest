@@ -1,0 +1,92 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+
+        <!-- Boostratp 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Siglo XXI</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="workstation" class="nav__logo">Siglo XXI</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        {% if perms.main.add_ingredientesxxi %}
+                        <li class="nav__item"><a href="Bodega" class="nav__link active-link">Bodega</a></li>
+                        {% endif %}
+                        {% if perms.main.add_facturaxxi %}
+                        <li class="nav__item"><a href="Finanzas" class="nav__link active-link">Finanzas</a></li>
+                        {% endif %}
+                        {% if perms.main.add_mesaxxi %}
+                        <li class="nav__item"><a href="Cocina" class="nav__link active-link">Cocina</a></li>
+                        {% endif %}
+                        
+
+                        
+
+                        
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                        <li class="nav__item"><div class="nav__link active-link"> | Usuario: {{request.user.first_name}} {{request.user.last_name}} |</div></li>
+                        
+                        <li class="nav__item"><a href="/logout" class="nav__link active-link">Cerrar Sesion</a></li>
+
+                        
+
+                        
+                        
+
+                    </ul>
+                    
+                        
+                    
+                </div>
+
+                        
+
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+       
+        <div class="boxForm">
+            <img src="{% static 'main/img/img_workstation.png' %}" alt="img_workstation">
+
+            <!--div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><p><a href="//24timezones.com/Santiago--de-Chile/hora" style="text-decoration: none" class="clock24" id="tz24-1632107527-c1232-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIxIiwic2hvd3NlY29uZHMiOiIxIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2MTQ3ZmMwNzAxMDQwIiwidHlwZSI6ImRiIiwibGFuZyI6ImVzIn0=" title="husos horarios - Santiago  de Chile" target="_blank" rel="nofollow">Santiago  de Chile</a></p><div id="clock_block_cb6147fc0701040"></div></div>
+            <script type="text/javascript" src="//w.24timezones.com/l.js" async></script-->
+        </div>
+        
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <p class="footer__copy">&#169; 2021 Portafolio Web. Todos los derechos reservados</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{% static 'main/js/main.js' %}"></script>
+    </body>
+
+</html>
