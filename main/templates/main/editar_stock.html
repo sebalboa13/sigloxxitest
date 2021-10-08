@@ -1,0 +1,111 @@
+{% load static%}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+
+        <!-- Boostratp 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Siglo XXI</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="workstation" class="nav__logo">Siglo XXI</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        {% if perms.main.add_ingredientesxxi %}
+                        <li class="nav__item"><a href="/stock" class="nav__link active-link">Bodega</a></li>
+                        {% endif %}
+                        {% if perms.main.add_facturaxxi %}
+                        <li class="nav__item"><a href="Finanzas" class="nav__link active-link">Finanzas</a></li>
+                        {% endif %}
+                        {% if perms.main.add_mesaxxi %}
+                        <li class="nav__item"><a href="Cocina" class="nav__link active-link">Cocina</a></li>
+                        {% endif %}
+                        
+
+                        
+
+                        
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                        <li class="nav__item"><div class="nav__link active-link"> | Usuario: {{request.user.first_name}} {{request.user.last_name}} |</div></li>
+                        
+                        <li class="nav__item"><a href="/logout" class="nav__link active-link">Cerrar Sesion</a></li>
+
+                        
+
+                        
+                        
+
+                    </ul>
+                    
+                        
+                    
+                </div>
+
+                        
+
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <!--========== FORMULARIO ==========-->
+        
+            <div class="boxForm" >
+                <form  method="post">
+                <!--div class="form-group">
+                    <label for="cantidad">Ingrese cantidad</label>
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="" >
+                </div-->
+                <div class="form-group">
+                    <label for="cantidad">Ingrese cantidad</label>
+                    <div class="form-control">
+                    {{ form.as_p }}
+                    </div>
+                </div>
+                
+                {% csrf_token %}
+                <button type="submit">Agregar</button>
+              </form>  
+            </div>
+            
+        
+
+
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <p class="footer__copy">&#169; 2021 Portafolio Web. Todos los derechos reservados</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{% static 'main/js/main.js' %}"></script>
+    </body>
+
+</html>
